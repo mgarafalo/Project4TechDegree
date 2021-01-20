@@ -1,0 +1,47 @@
+/* ============================================= */
+/*              Media Queries                    */
+/* ============================================= */
+
+@media (min-width: $break-sm) {
+    .container,
+    .centered {
+      max-width: 1400px;
+      @include block-margin-reset;
+    }
+    .row {
+      flex-direction: row;
+    }
+    [class^=col] {
+      @include flex-centered;
+      margin-top: 0;
+    }
+    [class^=col] + [class^=col] {
+      margin-left: 10px;
+    }
+
+    @for $i from 1 through 12 {
+      .col-#{$i} {
+        flex-basis: percentage($i * 8.333333) / 100;
+      }
+    }
+
+    .nav {
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .nav-link {
+      flex-basis: 100px;
+    }
+    .btn {
+      padding: 10px 30px;
+    }
+    .btn + .btn {
+      margin-left: 10px;
+    }
+    .logo {
+      margin-left: initial;
+      margin-right: initial;
+    }
+  }
+  /*# sourceMappingURL=styles.css.map */
